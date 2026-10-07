@@ -2,13 +2,13 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 global.window={};require('../workout-data.js');const workouts=window.WORKOUTS;
 const M=require('../training-model.js');
-test('30 sessões em seis semanas, sequência ABCD contínua e registros distintos',()=>{
-  const sessions=Array.from({length:30},(_,i)=>M.session(i));
+test('24 registros em seis semanas, quatro treinos por semana',()=>{
+  const sessions=Array.from({length:24},(_,i)=>M.session(i));
   assert.equal(sessions[4].workout,0);assert.equal(sessions[5].workout,1);
-  assert.equal(sessions[29].week,6);assert.equal(sessions[29].day,4);
-  assert.equal(new Set(sessions.map(x=>x.index)).size,30);
+  assert.equal(sessions[23].week,6);assert.equal(sessions[23].workout,3);
+  assert.equal(new Set(sessions.map(x=>x.index)).size,24);
   assert.equal(M.previous(4),0);assert.equal(M.previous(3),null);
-  assert.throws(()=>M.session(30));assert.throws(()=>M.session(-1));
+  assert.throws(()=>M.session(24));assert.throws(()=>M.session(-1));
 });
 test('ficha completa, séries e descansos prescritos, vídeo em todos os exercícios',()=>{
   assert.deepEqual(workouts.map(w=>w.ex.length),[6,7,5,7]);

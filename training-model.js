@@ -1,9 +1,9 @@
 (function(root){
   'use strict';
-  const TOTAL=30;
+  const TOTAL=24;
   function session(index){
     if(!Number.isInteger(index)||index<0||index>=TOTAL)throw new RangeError('Sessão inválida');
-    return {index,week:Math.floor(index/5)+1,day:index%5,workout:index%4};
+    return {index,week:Math.floor(index/4)+1,workout:index%4};
   }
   function previous(index){return index>=4?index-4:null;}
   function normalize(raw,workout){

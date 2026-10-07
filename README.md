@@ -4,7 +4,7 @@ Aplicativo estático para a ficha ABCD de hipertrofia: 25 exercícios, demonstra
 
 ## Organização
 
-São 30 sessões (5 por semana, durante 6 semanas). A sequência A → B → C → D continua entre as semanas: a primeira é A/B/C/D/A; a segunda, B/C/D/A/B. Cada sessão tem registros próprios, inclusive repetições do mesmo treino na mesma semana.
+A navegação apresenta somente Treino A, Treino B, Treino C e Treino D, com seleção de seis semanas de progressão. Não há dias da semana ou frequência fixa. São 24 registros distintos, um por treino em cada semana.
 
 Os exercícios, séries, faixas e descansos seguem a ficha fornecida. Drop-set/rest-pause são lembretes da última série; suas pausas internas e parâmetros não foram inventados. A progressão usa repetições e carga, sem percentuais de PR compartilhados entre exercícios.
 
@@ -18,7 +18,7 @@ O descanso permite iniciar, pausar, retomar, reiniciar, ajustar 15 segundos e es
 
 ## Registros
 
-Dados ficam no armazenamento local deste navegador/dispositivo, sem conta ou sincronização. A nova ficha usa o prefixo `hg6_v1_` e não sobrescreve as chaves do programa antigo. Limpar os dados do site apaga os registros. A identidade do ciclo é fixa: reutilizar as mesmas 30 sessões altera seus registros.
+Dados ficam no armazenamento local deste navegador/dispositivo, sem conta ou sincronização. A navegação ABCD usa o prefixo `hg6_abcd_v2_`. Quando ainda não existe registro novo, recupera o primeiro registro `hg6_v1_` do mesmo treino na semana antiga. Todos os registros antigos, inclusive repetições extras, permanecem preservados. Limpar os dados do site apaga os registros. A identidade do ciclo é fixa: reutilizar os mesmos 24 registros altera seus registros.
 
 ## Executar e verificar
 
