@@ -53,7 +53,7 @@
     set.done=false;const row=el.closest('.set-row'),btn=row.querySelector('.complete');btn.classList.remove('done');btn.textContent='○';btn.setAttribute('aria-pressed','false');btn.setAttribute('aria-label',btn.getAttribute('aria-label').replace(/^Desmarcar/,'Concluir'));save();progress();
   });
   $('exercises').addEventListener('click',event=>{
-    const video=event.target.closest('.watch-video');if(video){let frame=video.parentElement.querySelector('iframe');if(!frame){frame=document.createElement('iframe');frame.src=video.dataset.src;frame.title=video.dataset.title;frame.allow='fullscreen; picture-in-picture';frame.allowFullscreen=true;video.parentElement.append(frame);}video.remove();return;}
+    const video=event.target.closest('.watch-video');if(video){let frame=video.parentElement.querySelector('iframe');if(!frame){frame=document.createElement('iframe');frame.allow='fullscreen; picture-in-picture';frame.allowFullscreen=true;video.parentElement.append(frame);}frame.src=video.dataset.src;frame.title=video.dataset.title;return;}
     const btn=event.target.closest('.complete');if(!btn)return;
     const set=data.ex[btn.dataset.ex].sides[btn.dataset.side][Number(btn.dataset.set)];
     if(!set.done&&(set.w===''||set.r===''||set.r<1)){toast('Preencha carga e repetições antes de concluir. Use 0 kg para peso corporal.');return;}
